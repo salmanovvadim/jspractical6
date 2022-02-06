@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+  <html lang="ru">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Использование метода splice для добавление в середину массива новых элементов</title>
+    </head>
+
+    <body>
+      <script>
+        ////Declaring source arrays (Объявление исходного массива)
+        const arrayOne = [1, 2, 3, 4, 5];
+        //Source array output (Вывод исходного массива)    
+        document.write('Исходный массив:' + arrayOne + '.<br>');
+        /*Using the formula of the splice method, namely array.splice(start[, deleteCount[, item1[, item2[, ...]]]]), we add new elements to the array while keeping the old ones (for deleteCount[ we specify the value 0) (С использованием формулы метода splice, а именно array.splice(start
+        
+        [, deleteCount[, item1[, item2[, ...]]]]), добавляем в массив новые элементы сохраняя старые (для deleteCount[ указываем значение 0))
+        */
+       arrayOne.splice(3, 0, 'a', 'b', 'c');
+       //Result output (Вывод результата)
+       document.write('Исходный массив после преобразования путем добавления новых элементов выглядит следующим образом: ' + arrayOne); 
+      </script>
+    </body>
+
+  </html>

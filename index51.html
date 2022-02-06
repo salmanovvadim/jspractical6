@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+  <html lang="ru">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Использование метода slice</title>
+    </head>
+
+    <body>
+      <script>
+        ////Declaring source arrays (Объявление исходного массива)
+        const arrayOne = [1, 2, 3, 4, 5];
+        //Source array output (Вывод исходного массива)    
+        document.write('Исходный массив:' + arrayOne + '.<br>');
+        //Copying elements with values ​​1, 2, 3 to a new array (Копирование элементов со значениями 1, 2, 3 в новый массив)
+
+        const arrayTwo = arrayOne.slice(3); // Необходимые элементы находятся на позиции с 3 по 4
+        //Result Output (Вывод результата)
+        document.write('В результате использования метода slice из первого массива скопированны во второй элементы со значениями:' + arrayTwo + '.<br>');
+      </script>
+    </body>
+
+  </html>

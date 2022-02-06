@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+  <html lang="ru">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Создание отфильтрованного массива</title>
+    </head>
+
+    <body>
+      <script>
+        //Entering a variable for later use in a for loop (Ввод переменной для последующего использования в цикле for)
+        let i;
+        //Create an array (Создаем массив)
+        let arrayFirst = new Array();
+        //Asking the user to know the length of the array (Запрос у пользователя знаение длинны массива)
+        let data = prompt('Введите желаемое колличество элементов в массиве(введенное значение должно являться целым положительным числом)', '');
+
+        //Сhecking the validity of the entered value for the number of elements in the array (Проверка валидности введенного значения для количества элементов в массиве)
+        if(!Number.isInteger(data) && (+data) > 0)
+        {
+          document.write('Желаемое количество элементов в массиве ' + data + '!<br>');
+        }
+
+        else
+        {
+          alert('Извините, но введенное вами значение не является целым положительым числом, либо значение равно 0, пожалуйста попробуйте еще раз!');
+          data = prompt('Введите желаемое колличество элементов в массиве(введенное значение должно являться целым положительным числом)', '');
+        }
+        document.write('Введенный вами массив выгдядет следующим образом: <br>');
+
+        //Asking the user for the values ​​of array elements (Запрос у пользователя значений элементов массива)
+        for(i = 0; i < +data; i++)
+        {  
+          arrayFirst[i] = prompt ('Введите значание массива под индексом ' + i + ' (Допускается ввод только числовых значений)');
+
+          while(Number.isNaN(+arrayFirst[i]) || arrayFirst[i].length == 0 || /[\s]/.test(arrayFirst[i]))
+          {
+            alert('К сожалению, введенное вами значение не является числовым, в связи с чем не может быть принято в качестве элемента массива (Согласно условий решаемой задачи, в дальнейшем необходимо проводить сравнение введенных значений с цифрой 99). Возможно вы случайно ввели символ не являющийся составным для какого-либо вещественного числа. Пожалуйста попробуйте еще раз!')
+            arrayFirst[i] = prompt('Введите значание массива под индексом ' + i + ' (Допускается ввод только числовых значений');
+          }
+
+            document.write(arrayFirst[i] + ', ');
+        }
+        //We filter the resulting array (Проводим фильтрацию полученного массива)
+        const arrayFinish =  arrayFirst.filter((el) => el >= 99);
+        // Result output (Вывод результата)
+        if(arrayFinish.length > 0){
+        document.write('<br>Врезультате фильтра массива по принципу, что каждый его элемент больше либо равен 99, массив получил следующий вид:<br>' + arrayFinish + '; ');
+        }
+          
+        else{
+          document.write('<br>В результате фильтрации оказалось, что все значения внесенные Вами в массив меньше 99, в связи с чем все элементы из массива были удалены.')
+        }
+      </script>
+    </body>
+
+  </html>

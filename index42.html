@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+  <html lang="ru">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Пример 2 с массивами</title>
+    </head>
+
+    <body>
+      <script>
+        //String function to unroll an array (Строчная функция для развертывания массива)
+        const reverse = (array) =>
+        {
+          const reversed = [];
+          for (let i = array.length - 1; i >= 0; i -= 1) {
+            reversed.push(array[i]);
+          }
+
+          return reversed;
+        }
+        //Given array (Заданный массив)
+        const data = [1, 2, 3];
+        console.log('Исходный массив: ' + data + '.'); // Вывод заданого массива
+        console.log('Развернутый массив: ' + reverse(data) + '.'); // вывод перевернутого массива
+      </script>
+    </body>
+    
+  </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+  <html lang="ru">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Использование метода Sort</title>
+    </head>
+
+    <body>
+      <script>
+        ////Declaring source arrays (Объявление исходного массива)
+          const arrayOne = ['a', 'b', 'c', 'b', 'a'];
+          //Source array output (Вывод исходного массива)    
+          document.write('Исходный массив:' + arrayOne + '.<br>');
+          //Sorting the original array (Сортировка исходного массива)
+          arrayOne.sort();
+
+          //Sorted array output (Вывод отсортированного масиива)
+          document.write('Исходный массив после сортировки с использование функции sort: ' + arrayOne + '<br>');
+
+          // (При помощи цикла for пробегаем п всему массиву. В случае если последующий элемент массива равен текущему, данный элемент удаляется из массива при помощи метода splice)
+          for(let i = 0; i < arrayOne.length; i++)
+          {
+            if(arrayOne[i] == arrayOne[i + 1])
+            {
+              arrayOne.splice(i, 1)
+            }
+          }
+
+          // Result output (Вывод результата)
+          document.write('После проведенной сортировки и удаления повторяющихся значенией, исходный массив выглядет следующим образом: ' + arrayOne);
+      </script>
+    </body>
+    
+  </html>

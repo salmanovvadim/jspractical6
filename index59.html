@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+  <html lang="ru">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Удаление повторяющихся элементов в массиве</title>
+    </head>
+
+    <body>
+      <script>
+        //Create an array (Создаем массив)
+        let arrayFirst = new Array();
+        //Asking the user to know the length of the array (Запрос у пользователя знаение длинны массива)
+        let data = prompt('Введите желаемое колличество элементов в массиве(введенное значение должно являться целым положительным числом)', '');
+
+        //Сhecking the validity of the entered value for the number of elements in the array (Проверка валидности введенного значения для количества элементов в массиве)
+        if(!Number.isInteger(data) && (+data) > 0)
+        {
+          document.write('Желаемое количество элементов в массиве ' + data + '!<br>');
+        }
+
+        else
+        {
+          alert('Извините, но введенное вами значение не является целым положительым числом, либо значение равно 0, пожалуйста попробуйте еще раз!');
+          data = prompt('Введите желаемое колличество элементов в массиве(введенное значение должно являться целым положительным числом)', '');
+        }
+        document.write('Введенный вами массив выгдядет следующим образом: <br>');
+
+        //Asking the user for the values ​​of array elements (Запрос у пользователя значений элементов массива)
+        for (let i = 0; i < +data; i++)
+        {
+          arrayFirst[i] = prompt('Введите значание массива под индексом ' + i);
+          while (arrayFirst[i].length == 0 || /[\s]/.test(arrayFirst[i]))
+          {
+            alert('Скорее всего вы забыли ввести значение элемента массива, либо Вами введен пробел. Пожалуйста попробуйте еще раз!')
+
+            arrayFirst[i] = prompt('Введите значание массива под индексом ' + i);
+          }
+          document.write(arrayFirst[i] + ', ');
+        }
+        //Create a string function that removes duplicates from an array using the Set method (Создаем строчную функцию, удаляющиеся дубликаты из массива с использованием метода Set)
+        let FilterArray = (BuffArray) => [...new Set(BuffArray)];
+        // Result output (Вывод результата)
+        document.write('<br>Массив после удаления дублирующихся элементов принимает следующий вид: ' + FilterArray(arrayFirst));
+      </script>
+    </body>
+    
+  </html>

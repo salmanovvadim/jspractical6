@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+  <html lang="ru">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Пример 1 с массивами</title>
+    </head>
+
+    <body>
+      <script>
+        //We start a string function to create an array (Заводим строчную функцию, для создания массива)
+        const fill = (arraySize, value) => new Array(arraySize).fill(value);
+        //Entering information about the number of elements in the array and the value of these elements (Ввод сведений о количестве элементов в массиве и значению данных элементов)
+
+        const data = prompt('Введите желаемое колличество элементов в массиве(введенное значение должно являться целым положительным числом)', '');
+        //Сhecking the validity of the entered value for the number of elements in the array (Проверка валидности введенного значения для количества элементов в массиве)
+        while(!Number.isInteger(data) && (+data) > 0)
+        {
+          document.write('Желаемое количество элементов в массиве ' + data + '!<br>');
+        }
+
+        while(Number.isInteger(data) || (+data) <= 0)
+        {
+          alert('Извините, но введенное вами значение не является целым положительым числом, либо значение равно 0, пожалуйста попробуйте еще раз!');
+          data = prompt('Введите желаемое колличество элементов в массиве(введенное значение должно являться целым положительным числом)', '');
+        }
+        const valueToFill = prompt('Введите желаемое значение для заполнения массива');
+        document.write('Желаемое значение для заполнения массива ' + valueToFill + '!<br>')
+
+        //Сonclusion of the final result (Вывод окончательного результата)
+        document.write('Заданный Вами массив:'  + fill(+data, valueToFill));
+      </script>
+    </body>
+
+  </html>

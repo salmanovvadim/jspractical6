@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+  <html lang="ru">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Использование метода sort для сортировки массива</title>
+    </head>
+
+    <body>
+      <script>
+        ////Declaring source arrays (Объявление исходного массива)
+        const arrayOne = [5, 6, 1, 30, 8, 0, 2, 10, 4];
+        //Source array output (Вывод исходного массива)    
+        document.write('Исходный массив:' + arrayOne + '.<br>');
+        //Array after sorting using sort method (Массив после сортировки с использованием метода sort)
+        arrayOne.sort(function (a, b) {
+          return a - b;
+        });
+
+        //Result output (Вывод результата)
+        document.write('Исходный массив после сортировки его элементов (являющихся числами) с использованием метода sort выглядит следующим образом: ' + arrayOne);
+      </script>
+    </body>
+    
+  </html>

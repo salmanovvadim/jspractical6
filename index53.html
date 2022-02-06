@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+  <html lang="ru">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Использование метода splice для удаления некоторых элементов массива</title>
+    </head>
+
+    <body>
+      <script>
+        ////Declaring source arrays (Объявление исходного массива)
+          const arrayOne = [1, 2, 3, 4, 5];
+          //Source array output (Вывод исходного массива)    
+          document.write('Исходный массив:' + arrayOne + '.<br>');
+          //Using the Splice method, we transform the array by removing the specified values (При помощи метода Splice преобразуем массив, удаляя указанные значения)
+          arrayOne.splice(1, 2);
+
+          // Result output (Вывод результата)
+          document.write('После удаления указанных в задании значений, массив преобразован в следующий вид: ' + arrayOne);
+      </script>
+    </body>
+    
+  </html>

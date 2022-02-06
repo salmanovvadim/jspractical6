@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+  <html lang="ru">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Разреженный массив</title>
+    </head>
+
+    <body>
+      <script>
+        ////Declaring source arrays (Объявление исходного массива)
+        const arrayOne = [5, , 2, , 18];
+        //Source array output (Вывод исходного массива)    
+        document.write('Исходный массив:' + arrayOne + '.<br>');
+        document.write('Вывод элементов массива в столбец с указанием их индексов: <br>');
+
+        //Using a for loop to output each element of an array separately (Использование цикла for для отдельного вывода каждого элемента массива)
+        for(let i = 0; i < arrayOne.length; i++)
+        {
+          //Result output (Вывод результата)
+          document.write('Элемент массива под индексом № ' + i + ': ' + arrayOne[i] + ';<br>');
+        }
+      </script>
+    </body>
+    
+  </html>

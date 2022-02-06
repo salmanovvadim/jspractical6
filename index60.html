@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Числа Фибоначчи</title>
+    </head>
+
+    <body>
+      <script>
+        //We store from the user the numerical value of the index of interest to the Fibonacci numbers (Запашиваем у пользователя числовое значение индекса, интересующего числа Фибоначчи)
+        let Fibonacсi = prompt('Пожалуйста введите индекс числа Фибоначчи, которое Вас интересует (Напоминаем Вам, что последовательность чисел Фиббоначи существует только для 0 и целых положительных чисел)', '')
+
+        //Validation of the entered value (Проверка корректности введенного значения)
+        if (!Number.isInteger(Fibonacсi) && (+Fibonacсi) >= 0) {
+            document.write('Вами введен индекс числа под номером ' + Fibonacсi + '!<br>');
+          }
+          else {
+            alert('Извините, но введенное вами значение не является ни 0,ни целым положительным числом, пожалуйста попробуйте еще раз!');
+            Fibonacсi = prompt('Число Фибонначчи, находящееся под индексом ' + Fibonacсi + ' равно ' + '!<br>');
+          }
+
+          //Function for calculating the Fibonacci number (Функция для вичисления числа Фибоначчи)
+          function FibonacсiNumber(num) {
+            let Sum = new Array;
+            Sum[0] = 0;
+            Sum[1] = 1;
+            for(let i = 2; i <= num; i++)
+            {
+              Sum[i] = Sum[i - 1] + Sum[i - 2];
+            }
+            return (Sum[num]);
+          }
+
+          //Output of the result, with a preliminary check of its correctness (Вывод результата, с предварительной провркой его корректности)
+          if(FibonacсiNumber(Fibonacсi) == Infinity)
+          {
+            document.write('К сожалению мы не можем сообщить вам число Фибоначчи под индексом ' + Fibonacсi + ' В связи с тем, что оно выходит за пределы типа данных Number')
+          }
+
+          else
+          {
+          document.write('Число Фибонначчи, находящееся под индексом ' + Fibonacсi + ' равно ' + FibonacсiNumber(Fibonacсi));
+          }
+      </script>
+    </body>
+    
+  </html>
